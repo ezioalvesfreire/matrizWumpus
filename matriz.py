@@ -25,15 +25,15 @@ def re_create():
 
     colorStench = (0.75, 0.56, 0)
     colorWumpus = (0.47, 0.24, 0.015)
-    colorAgent = (0.5, 0.5, 0.5)
+    colorAgent = (0.6, 0.6, 0.7)
     colorWhite = (1, 1, 1)
-    colorGSB = (0.83, 0.91, 0.82)
+    colorGSB = (0.83, 1, 0.82)
     colorBreeze = (0.64, 0.76, 0.95)
     colorPit = (0, 0, 0)
 
 
-    colorsLRooms = [colorStench, colorStench, colorWumpus, colorWhite, colorWhite, colorWhite, colorGSB, colorBreeze, colorBreeze, colorBreeze, colorBreeze, colorBreeze, colorPit, colorPit, colorPit]
-    shuffle(colorsLRooms)
+    colorsLRooms = [colorStench, colorWumpus,  colorStench, colorBreeze, colorWhite, colorGSB, colorWhite, colorPit, colorBreeze, colorPit, colorBreeze, colorBreeze, colorWhite, colorBreeze, colorPit]
+    #shuffle(colorsLRooms)
 
     print(colorsLRooms[0])
     vInit = 0.18

@@ -22,7 +22,7 @@ def re_create():
 
     colorStench = (0.75, 0.56, 0)
     colorWumpus = (0.47, 0.24, 0.015)
-    coloragent = (0.5, 0.5, 0.5)
+    colorAgent = (0.5, 0.5, 0.5)
     colorWhite = (1, 1, 1)
     colorGSB = (0.83, 0.91, 0.82)
     colorBreeze = (0.64, 0.76, 0.95)
@@ -36,7 +36,10 @@ def re_create():
     for c in range(1, qtdCelula):
         celula = vInit
         for a in range(1, qtdCelula):
-            create_square((colorStench), ((pointInit, celula), (printCelula * (c), celula), (printCelula * (c), printCelula *(a)), (pointInit, printCelula *(a))))
+            if pointInit == vInit and celula == vInit:
+               create_square((colorAgent), ((pointInit, celula), (printCelula * (c), celula), (printCelula * (c), printCelula *(a)), (pointInit, printCelula *(a))))
+            else:
+                create_square((colorStench), ((pointInit, celula), (printCelula * (c), celula), (printCelula * (c), printCelula * (a)), (pointInit, printCelula * (a))))
             #printCelula = vInit + printCelula
            # print(celula)
             celula = (printCelula * a) +vInit
@@ -49,7 +52,7 @@ def re_create():
     #create_square((colorStench), ((1, 1), (6, 1), (6, 6), (1, 6)))  # amarelo Stench
     #create_square((colorWumpus), ((1, 7), (6, 7), (6, 12), (1, 12)))  # Wumpus
     #create_square((colorStench), ((1, 13), (6, 13), (6, 18), (1, 18)))  # amarelo Stench
-    #create_square((coloragent), ((1, 19), (6, 19), (6, 24), (1, 24)))  # Cinza Agent
+    #create_square((colorAgent), ((1, 19), (6, 19), (6, 24), (1, 24)))  # Cinza Agent
 
     # segunda coluna
   #  create_square((colorWhite), ((7, 1), (12, 1), (12, 6), (7, 6)))  # Branco

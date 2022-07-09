@@ -1,3 +1,6 @@
+from random import random
+from random import shuffle
+
 from OpenGL.GL import *
 from OpenGL.GLUT import *
 from PIL import Image
@@ -28,6 +31,11 @@ def re_create():
     colorBreeze = (0.64, 0.76, 0.95)
     colorPit = (0, 0, 0)
 
+
+    colorsLRooms = [colorStench, colorStench, colorWumpus, colorWhite, colorWhite, colorWhite, colorGSB, colorBreeze, colorBreeze, colorBreeze, colorBreeze, colorBreeze, colorPit, colorPit, colorPit]
+    shuffle(colorsLRooms)
+
+    print(colorsLRooms[0])
     vInit = 0.18
     printLRoom = 6
     pointInit = vInit
@@ -36,14 +44,15 @@ def re_create():
     for c in range(1, qtdLRoom):
         LRoom = vInit
         for a in range(1, qtdLRoom):
+            print(c)
             if pointInit == vInit and LRoom == vInit:
                create_square((colorAgent), ((pointInit, LRoom), (printLRoom * (c), LRoom), (printLRoom * (c), printLRoom *(a)), (pointInit, printLRoom *(a))))
             else:
-                create_square((colorStench), ((pointInit, LRoom), (printLRoom * (c), LRoom), (printLRoom * (c), printLRoom * (a)), (pointInit, printLRoom * (a))))
+                create_square((colorsLRooms[c]), ((pointInit, LRoom), (printLRoom * (c), LRoom), (printLRoom * (c), printLRoom * (a)), (pointInit, printLRoom * (a))))
             #printLRoom = vInit + printLRoom
            # print(LRoom)
             LRoom = (printLRoom * a) +vInit
-            print("LRoom", printLRoom)
+           # print("LRoom", printLRoom)
         #print("pointinit",pointInit)
         pointInit = (printLRoom * c) +vInit
 

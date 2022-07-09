@@ -29,23 +29,23 @@ def re_create():
     colorPit = (0, 0, 0)
 
     vInit = 0.18
-    printCelula = 6
+    printLRoom = 6
     pointInit = vInit
-    qtdCelula = 5
+    qtdLRoom = 5
 
-    for c in range(1, qtdCelula):
-        celula = vInit
-        for a in range(1, qtdCelula):
-            if pointInit == vInit and celula == vInit:
-               create_square((colorAgent), ((pointInit, celula), (printCelula * (c), celula), (printCelula * (c), printCelula *(a)), (pointInit, printCelula *(a))))
+    for c in range(1, qtdLRoom):
+        LRoom = vInit
+        for a in range(1, qtdLRoom):
+            if pointInit == vInit and LRoom == vInit:
+               create_square((colorAgent), ((pointInit, LRoom), (printLRoom * (c), LRoom), (printLRoom * (c), printLRoom *(a)), (pointInit, printLRoom *(a))))
             else:
-                create_square((colorStench), ((pointInit, celula), (printCelula * (c), celula), (printCelula * (c), printCelula * (a)), (pointInit, printCelula * (a))))
-            #printCelula = vInit + printCelula
-           # print(celula)
-            celula = (printCelula * a) +vInit
-            print("Celula",printCelula)
+                create_square((colorStench), ((pointInit, LRoom), (printLRoom * (c), LRoom), (printLRoom * (c), printLRoom * (a)), (pointInit, printLRoom * (a))))
+            #printLRoom = vInit + printLRoom
+           # print(LRoom)
+            LRoom = (printLRoom * a) +vInit
+            print("LRoom", printLRoom)
         #print("pointinit",pointInit)
-        pointInit = (printCelula * c) +vInit
+        pointInit = (printLRoom * c) +vInit
 
 
     # primeira coluna

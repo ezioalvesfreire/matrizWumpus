@@ -28,20 +28,21 @@ def re_create():
     colorBreeze = (0.64, 0.76, 0.95)
     colorPit = (0, 0, 0)
 
-    vInit = 1
+    vInit = 0.18
     printCelula = 6
     pointInit = vInit
+    qtdCelula = 5
 
-    for c in range(1, 5):
+    for c in range(1, qtdCelula):
         celula = vInit
-        for a in range(1, 5):
+        for a in range(1, qtdCelula):
             create_square((colorStench), ((pointInit, celula), (printCelula * (c), celula), (printCelula * (c), printCelula *(a)), (pointInit, printCelula *(a))))
             #printCelula = vInit + printCelula
            # print(celula)
-            celula = (printCelula * a) +1
+            celula = (printCelula * a) +vInit
             print("Celula",printCelula)
         #print("pointinit",pointInit)
-        pointInit = (printCelula * c) +1
+        pointInit = (printCelula * c) +vInit
 
 
     # primeira coluna

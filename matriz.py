@@ -40,21 +40,25 @@ def re_create():
     printLRoom = 6
     pointInit = vInit
     qtdLRoom = 5
+    nCicle = 1
 
     for c in range(1, qtdLRoom):
         LRoom = vInit
         for a in range(1, qtdLRoom):
-            print(c)
             if pointInit == vInit and LRoom == vInit:
                create_square((colorAgent), ((pointInit, LRoom), (printLRoom * (c), LRoom), (printLRoom * (c), printLRoom *(a)), (pointInit, printLRoom *(a))))
             else:
-                create_square((colorsLRooms[c]), ((pointInit, LRoom), (printLRoom * (c), LRoom), (printLRoom * (c), printLRoom * (a)), (pointInit, printLRoom * (a))))
+                create_square((colorsLRooms[nCicle-1]), ((pointInit, LRoom), (printLRoom * (c), LRoom), (printLRoom * (c), printLRoom * (a)), (pointInit, printLRoom * (a))))
+                nCicle += 1
+            print(nCicle-1)
             #printLRoom = vInit + printLRoom
            # print(LRoom)
+
             LRoom = (printLRoom * a) +vInit
            # print("LRoom", printLRoom)
         #print("pointinit",pointInit)
         pointInit = (printLRoom * c) +vInit
+
 
 
     # primeira coluna

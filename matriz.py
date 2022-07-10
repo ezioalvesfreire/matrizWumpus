@@ -32,10 +32,11 @@ def re_create():
     colorPit = (0, 0, 0)
 
 
-    colorsLRooms = [colorStench, colorWumpus,  colorStench, colorBreeze, colorWhite, colorGSB, colorWhite, colorPit, colorBreeze, colorPit, colorBreeze, colorBreeze, colorWhite, colorBreeze, colorPit]
+    colorsLRooms = [colorStench, colorWumpus,  colorStench, colorBreeze, colorWhite, colorGSB, colorWhite,
+                    colorPit, colorBreeze, colorPit, colorBreeze, colorBreeze, colorWhite, colorBreeze, colorPit]
     #shuffle(colorsLRooms)
 
-    print(colorsLRooms[0])
+    #print(colorsLRooms[0])
     vInit = 0.18
     printLRoom = 6
     pointInit = vInit
@@ -50,7 +51,7 @@ def re_create():
             else:
                 create_square((colorsLRooms[nCicle-1]), ((pointInit, LRoom), (printLRoom * (c), LRoom), (printLRoom * (c), printLRoom * (a)), (pointInit, printLRoom * (a))))
                 nCicle += 1
-            print(nCicle-1)
+            #print(nCicle-1)
             #printLRoom = vInit + printLRoom
            # print(LRoom)
 
@@ -83,10 +84,18 @@ def re_create():
     #create_square((colorWhite), ((19, 13), (24, 13), (24, 18), (19, 18)))  # Branco
     #create_square((colorBreeze), ((19, 19), (24, 19), (24, 24), (19, 24)))  # Azul Breeza
 
-    # agente = Image.open("imagens/agente/arqueiro.png")
-    # img_data = numpy.array(list(agente.getdata()), numpy.uint8)
-    # glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, agente.width, agente.height, 0, GL_RGB, GL_UNSIGNED_BYTE, img_data)
-    # glEnable(GL_TEXTURE_2D)
+    #agente = Image.open("imagens/agente/arqueiro.png")
+    ##img_data = numpy.array(list(agente.getdata()), numpy.uint8)
+    #img_data = agente.convert("RGBA").tobytes()
+    #glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 100, 100, 0, GL_RGB, GL_UNSIGNED_BYTE, img_data)
+    #glEnable(GL_TEXTURE_2D)
+
+    agente = Image.open("imagens/agente/img.png")
+    #img_data = numpy.array(list(agente.getdata()), numpy.uint8)
+    flipped_image = agente.transpose(Image.FLIP_TOP_BOTTOM)
+    img_data = flipped_image.convert("RGBA").tobytes()
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, agente.width, agente.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, img_data)
+    print(agente.width, agente.height)
 
 
 
